@@ -588,16 +588,12 @@ Contributions are welcome. Please ensure:
 ## Support & Resources
 
 - **Godot Engine**: [godotengine.org](https://godotengine.org)
-- **Shader Documentation**: [Godot Shaders](https://docs.godotengine.org/en/stable/tutorials/shaders/index.html)
-
----
-
+- **Shader Documentation**: [Impact Glass Shader](https://godotshaders.com/shader/impact-glass-shader/)
 ## Creator
-
 **PROJEKTSANSSTUDIOS**
-
 - **GitHub**: [github.com/Lord0Sanz](https://github.com/Lord0Sanz)
 - **itch.io**: [projekt-sans-studios.itch.io](https://projekt-sans-studios.itch.io/)
+- **Godot Shader**: [PROJEKTSANSSTUDIOS](https://godotshaders.com/author/lord0sanz/)
 
 ---
 
