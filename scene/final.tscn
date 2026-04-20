@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://dwb8hy02ig60w"]
+
+[ext_resource type="Texture2D" uid="uid://b4048k46dcmik" path="res://assets/test_2.png" id="1_1knsh"]
+[ext_resource type="Shader" uid="uid://d1q14cfn5pf1y" path="res://shader/glassshatter.gdshader" id="2_t5kvu"]
+[ext_resource type="Script" uid="uid://b33b8fa4ewm1l" path="res://scripts/ui_2.gd" id="3_iex4o"]
+[ext_resource type="AudioStream" uid="uid://dcs1yix4dudkm" path="res://assets/stu9-glass-crack-363162.mp3" id="4_v7gl1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aps68"]
+shader = ExtResource("2_t5kvu")
+shader_parameter/click_position = Vector2(0, 0)
+shader_parameter/show_crack = false
+shader_parameter/crack_thickness = 0.25
+shader_parameter/point_count = 30
+shader_parameter/crack_intensity = 1.0
+shader_parameter/refraction_strength = 5.0
+shader_parameter/blur_amount = 2.0
+shader_parameter/glass_tint = 0.1
+shader_parameter/crack_glow = 0.5
+shader_parameter/crack_color = Color(0.118, 0.118, 0.118, 0.588)
+shader_parameter/heal_amount = 0.0
+
+[node name="Final" type="Control" unique_id=1429869767]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=277655542]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_1knsh")
+
+[node name="GLASS" type="ColorRect" parent="." unique_id=768067686 node_paths=PackedStringArray("crack_sound")]
+material = SubResource("ShaderMaterial_aps68")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("3_iex4o")
+crack_sound = NodePath("../crack")
+
+[node name="crack" type="AudioStreamPlayer" parent="." unique_id=1095322972]
+stream = ExtResource("4_v7gl1")
